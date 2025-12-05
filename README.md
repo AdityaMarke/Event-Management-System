@@ -44,18 +44,6 @@ Key highlights:
 
 ---
 
-## 📂 Project Structure
-
-/var/www/html/
-│
-├── index.php # Event listing page (students)
-├── admin.php # Admin login and dashboard
-├── register.php # Event registration logic
-├── config.php # AWS + DB configuration
-└── vendor/ # AWS SDK via Composer
-
----
-
 ## 🗄 Database Schema
 
 ```sql
