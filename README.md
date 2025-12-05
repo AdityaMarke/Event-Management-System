@@ -88,6 +88,7 @@ Copy code
 
 ## 🗄️ Database Schema
 
+```sql
 CREATE TABLE events (
   id INT AUTO_INCREMENT PRIMARY KEY,
   event_name VARCHAR(100),
@@ -105,6 +106,8 @@ CREATE TABLE registrations (
   registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (event_id) REFERENCES events(id)
 );
+
+```
 
 ## ▶️ Installation & Deployment
 1️⃣ Clone the repo to EC2 Web Root:
