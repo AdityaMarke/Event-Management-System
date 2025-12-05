@@ -1,20 +1,18 @@
 # 🎉 Event Management System | Cloud Computing Project
 
-A scalable, cloud-hosted Event Management System developed using AWS services and PHP.  
-This project enables college administrators to create and manage events, while students can register for events through a user-friendly web application.
+A scalable and secure cloud-hosted Event Management System developed using AWS services and PHP.  
+This project empowers college administrators to create and manage events digitally, while students can register seamlessly through the web interface.
 
 ---
 
 ## 🚀 Project Overview
 
-The Event Management System is designed to digitize the event registration workflow in educational institutes.  
-It provides:
+The Event Management System modernizes and streamlines the traditional event registration process in educational institutions.
 
-- Secure admin login for event creation and management
-- Student event browsing and registration
-- Cloud-based deployment ensuring high availability and reliability
-
-The system leverages AWS Cloud infrastructure to achieve scalability, cost efficiency, and improved performance during peak event registrations.
+Key highlights:
+- Cloud-based deployment with high availability
+- Simple UI for event registration
+- Secure admin access for event management
 
 ---
 
@@ -22,49 +20,53 @@ The system leverages AWS Cloud infrastructure to achieve scalability, cost effic
 
 | Feature | Description |
 |--------|-------------|
-| Admin Login | Secure authentication for event creation |
-| Event Management | Admin can create events with attachments |
-| Student Registration | Students can register for events |
-| Cloud Database | Store event & registration records using RDS |
-| Cloud Storage | Event attachments stored in S3 securely |
-| Auto Scaling | Handles load during peak registration times |
-| Load Balancing | Distributes requests across EC2 instances |
-| Role-Based Access | IAM roles ensure secure resource usage |
+| Admin Login | Event creation and management |
+| Event Listings | Students can browse events |
+| Online Registration | Store participant records |
+| Cloud Storage | Event attachments stored in S3 |
+| Cloud Database | RDS-backed storage for scalability |
+| Auto Scaling | Handles increased workload |
+| Load Balancing | Distributes traffic across servers |
+| Secure Access | IAM-based resource control |
 
 ---
 
-## 🛠 AWS Services Used
-
-- **Amazon EC2** — Hosts PHP–Apache web application
-- **Amazon RDS (MySQL)** — Stores events & registration data
-- **Amazon S3** — Stores event-related files & assets
-- **Amazon IAM** — Secure access management with roles
-- **Auto Scaling Group** — Automatically adjusts capacity
-- **Application Load Balancer** — Distributes incoming traffic
-
----
-
-## 💻 Tech Stack
+## 🛠 Tech Stack
 
 | Layer | Technology |
 |------|------------|
 | Frontend | HTML, CSS, Bootstrap |
 | Backend | PHP |
 | Database | MySQL on AWS RDS |
-| OS / Hosting | Ubuntu on EC2 |
+| Compute | AWS EC2 (Ubuntu) |
 | Storage | AWS S3 |
+| Access Control | AWS IAM |
 
 ---
 
-## 🏗️ System Architecture
+## ☁️ System Architecture
 
-User
-↓
-Application Load Balancer
-↓
-Auto Scaling Group → Multiple EC2 Instances (PHP App)
-↓ ↓
-Amazon RDS (MySQL) ── Amazon S3 (Event Files)
+scss
+Copy code
+          Users
+            │
+            ▼
+ ┌─────────────────────┐
+ │ Application Load    │
+ │     Balancer        │
+ └─────────────────────┘
+            │
+            ▼
+  ┌──────────────────┐
+  │ Auto Scaling      │
+  │  Group (EC2)      │
+  └──────────────────┘
+    │              │
+    ▼              ▼
+┌────────────┐ ┌────────────┐
+│ S3 │ │ RDS │
+│ (Files) │ │ (Database) │
+└────────────┘ └────────────┘
 
 yaml
 Copy code
@@ -75,18 +77,18 @@ Copy code
 
 /var/www/html/
 │
-├── index.php # Homepage: View events & navigation
-├── admin.php # Admin operations & login
-├── register.php # Student registration handling
+├── index.php # Event listing page (students)
+├── admin.php # Admin login and dashboard
+├── register.php # Event registration logic
 ├── config.php # AWS + DB configuration
-└── vendor/ # AWS PHP SDK (Composer)
+└── vendor/ # AWS SDK via Composer
 
 pgsql
 Copy code
 
 ---
 
-## 🗄️ Database Schema
+## 🗄 Database Schema
 
 ```sql
 CREATE TABLE events (
@@ -109,48 +111,48 @@ CREATE TABLE registrations (
 
 ```
 
-## ▶️ Installation & Deployment
-1️⃣ Clone the repo to EC2 Web Root:
+▶️ Deployment Guide
+Clone the repository into EC2
 bash
 Copy code
 cd /var/www/html
 git clone <YOUR_REPOSITORY_URL> .
-2️⃣ Install Dependencies (AWS SDK)
+Install required dependencies
 bash
 Copy code
 composer require aws/aws-sdk-php
-3️⃣ Update configurations
-Modify config.php with:
+Configure application
+Update config.php:
 
-RDS DB endpoint, name, user & password
+RDS endpoint, DB name, user, password
 
-S3 bucket name & region
+S3 bucket name + region
 
-4️⃣ Restart Apache
-bash
+Restart Apache
+nginx
 Copy code
 sudo systemctl restart apache2
-5️⃣ Access via Browser
+Access the web app
 cpp
 Copy code
 http://<Load-Balancer-DNS>/
-🔐 Security
-IAM roles eliminate hard-coded credentials
+🔐 Security Considerations
+IAM roles remove need for access keys in code
 
-RDS secured with inbound rules for EC2 only
+Private S3 objects with presigned URLs
 
-S3 private access with presigned URLs
+RDS inbound limited to EC2 security group
 
 🚧 Future Enhancements
-Email confirmation on registration
+Email confirmation after registration
 
-Admin analytics dashboard
+Event analytics dashboard (Power BI / QuickSight)
 
-AWS Cognito support for multi-user roles
+Multi-role authentication via AWS Cognito
 
-Downloadable registration reports
+Export participants list (CSV / Excel / PDF)
 
-📌 Author
+👤 Author
 Aditya Marke
 B.Tech — Computer Engineering
 Pimpri Chinchwad College of Engineering
