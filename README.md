@@ -69,6 +69,13 @@ CREATE TABLE registrations (
 
 ## Screenshots
 
+
+<img width="1919" height="1019" alt="Screenshot 2025-12-06 090910" src="https://github.com/user-attachments/assets/7c64e5b4-f196-47c2-bae4-2bd2600520bb" />
+<img width="1919" height="1023" alt="Screenshot 2025-12-06 090948" src="https://github.com/user-attachments/assets/12644267-15b1-498d-b539-8772315aa40c" />
+<img width="1903" height="1023" alt="Screenshot 2025-12-06 091021" src="https://github.com/user-attachments/assets/15df0d6d-cf63-4580-9ae0-9c93468b3c83" />
+<img width="1919" height="1020" alt="Screenshot 2025-12-06 091045" src="https://github.com/user-attachments/assets/41aa109e-f489-4d88-bb8d-c997fac1325d" />
+<img width="1919" height="1019" alt="Screenshot 2025-12-06 091110" src="https://github.com/user-attachments/assets/7cef3a08-9303-41a8-8fae-f295e4e96813" />
+<img width="1919" height="1018" alt="Screenshot 2025-12-06 091137" src="https://github.com/user-attachments/assets/b72fca43-62bd-4d4c-b3ef-a58dbb159130" />
 <img width="1919" height="1013" alt="Screenshot 2025-12-06 085654" src="https://github.com/user-attachments/assets/965a3dd1-a09a-4571-b981-68dcbce74528" />
 <img width="1919" height="1014" alt="Screenshot 2025-12-06 085834" src="https://github.com/user-attachments/assets/2f2c95c3-6aed-4422-9c8a-bddee57aab56" />
 <img width="1895" height="1013" alt="Screenshot 2025-12-06 085921" src="https://github.com/user-attachments/assets/3eaf2fff-9552-427c-8dfe-c3ee43e2e0b5" />
