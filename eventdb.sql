@@ -23,6 +23,8 @@ CREATE TABLE IF NOT EXISTS registrations (
   phone VARCHAR(50),
   extra TEXT,
   s3_key VARCHAR(255),
+  UNIQUE INDEX idx_event_email (event_id, email),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 );
+
